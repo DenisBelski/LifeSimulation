@@ -97,6 +97,11 @@
             // nudDensity
             // 
             this.nudDensity.Location = new System.Drawing.Point(12, 95);
+            this.nudDensity.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.nudDensity.Minimum = new decimal(new int[] {
             2,
             0,
@@ -106,7 +111,7 @@
             this.nudDensity.Size = new System.Drawing.Size(87, 23);
             this.nudDensity.TabIndex = 4;
             this.nudDensity.Value = new decimal(new int[] {
-            2,
+            10,
             0,
             0,
             0});
@@ -125,12 +130,12 @@
             // 
             this.nudResolution.Location = new System.Drawing.Point(11, 40);
             this.nudResolution.Maximum = new decimal(new int[] {
-            25,
+            20,
             0,
             0,
             0});
             this.nudResolution.Minimum = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});
@@ -138,7 +143,7 @@
             this.nudResolution.Size = new System.Drawing.Size(87, 23);
             this.nudResolution.TabIndex = 2;
             this.nudResolution.Value = new decimal(new int[] {
-            3,
+            2,
             0,
             0,
             0});

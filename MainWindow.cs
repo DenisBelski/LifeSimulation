@@ -48,6 +48,7 @@ namespace LifeSimulation
         private int CountNeighbours(int x, int y)
         {
             int count = 0;
+
             for (int i = -1; i < 2; i++)
             {
                 for (int j = -1; j < 2; j++)
@@ -66,12 +67,12 @@ namespace LifeSimulation
                 }
             }
 
-            return 0;
+            return count;
         }
 
         private void StopGame()
         {
-            if (timer1.Enabled)
+            if (!timer1.Enabled)
             {
                 return;
             }
@@ -132,6 +133,48 @@ namespace LifeSimulation
         private void buttonStop_Click(object sender, EventArgs e)
         {
             StopGame();
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!timer1.Enabled)
+            {
+                return;
+            }
+
+            if (e.Button == MouseButtons.Left)
+            {
+                var x = e.Location.X / resolution;
+                var y = e.Location.Y / resolution;
+                var validationPassed = ValidateMousePosition(x, y);
+
+                if (validationPassed)
+                {
+                    field[x, y] = true;
+                }
+            }
+
+            if (e.Button == MouseButtons.Right)
+            {
+                var x = e.Location.X / resolution;
+                var y = e.Location.Y / resolution;
+                var validationPassed = ValidateMousePosition(x, y);
+
+                if (validationPassed)
+                {
+                    field[x, y] = false;
+                }
+            }
+        }
+
+        private bool ValidateMousePosition(int x, int y)
+        {
+            return x >= 0 && y >= 0 && x < columns && y < rows;
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            Text = $"Generation {currentGeneration}";
         }
 
     }
