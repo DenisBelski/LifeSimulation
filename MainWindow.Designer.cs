@@ -111,7 +111,7 @@
             this.nudDensity.Size = new System.Drawing.Size(87, 23);
             this.nudDensity.TabIndex = 4;
             this.nudDensity.Value = new decimal(new int[] {
-            10,
+            15,
             0,
             0,
             0});
@@ -180,9 +180,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Text = "GameOfLife";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
